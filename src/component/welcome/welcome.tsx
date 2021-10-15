@@ -1,28 +1,7 @@
-// import React, { Component } from 'react'
-
-// export default class Welcome extends Component<IWelcomeProps> {
-
-//     renderName = ''
-//     constructor(props:IWelcomeProps){
-//         super(props)
-//          this.renderName = 'Techii'+this.props.name
-//         // this.props.name = 'Techii'+this.props.name
-//     }
-//     render() {
-//         return (
-//             <div>
-//                 <p>Welcome {this.renderName}</p>
-//                <span>{this.props?.details?.address}</span>
-//                <span>{this.props?.details?.pincode}</span>
-                
-//             </div>
-//         )
-//     }
-// }
-
 import React from 'react';
 
 export default function Welcome(props:IWelcomeProps) {
+
     let isLoggedIn  = true
     function clickMe(name:string){
         console.log('click me button clicked')

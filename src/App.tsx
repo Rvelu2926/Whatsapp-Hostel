@@ -1,22 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import SideNav from './component/side-nav/side-nav';
-import CreditCard from './component/credit-card/credit-card';
-import Welcome from './component/welcome/welcome';
 
 function App() {
-  const detail = {address : 'north street',pincode : 614018}
-  const isLoggedIn = false
+
+  function getName(name : string){
+    alert(name)
+  }
+
+  function add(a:number){
+    alert(a+10)
+  }
+
+
+
+  
+
   return (
     <div>
-      {isLoggedIn
-        ? <Welcome name='vetri' />
-        : <Welcome  name='karthi' />
-      }
-    {/* <Welcome name='vetri' details={detail} />
-    <Welcome name='karthi' /> */}
-    {/* <Welcome name='vel' /> */}
+      <h1>New Heading</h1>
+      <h3>function compoennt added</h3>
+      <button onClick={()=> {add(1)}}>Click Me !</button>
+      <button onClick={()=> {getName('vetri')}}>Click Me !</button>
     </div>
     );
 }
@@ -24,3 +28,6 @@ function App() {
 export default App;
 
 
+export function add(a:any,b:any){
+
+}
