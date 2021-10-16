@@ -11,6 +11,9 @@ function App() {
     alert(a+10)
   }
 
+  function consoleName(name:string){
+    console.log(name)
+  }
 
 
   
