@@ -13,6 +13,7 @@
     "@types/node": "^12.20.28",
     "@types/react": "^17.0.27",
     "@types/react-dom": "^17.0.9",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -24,7 +25,10 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint . --ext .ts,.js,.tsx,.jsx --fix ",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json,css,scss,md}",
+    "isready": "npm run format && npm run lint && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,22 +49,32 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.1.0",
-    "@typescript-eslint/parser": "^5.1.0",
+    "@typescript-eslint/eslint-plugin": "5.2.0",
+    "@typescript-eslint/parser": "5.2.0",
     "autoprefixer": "^9.8.8",
-    "eslint": "^7.32.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint-config-airbnb-typescript": "14.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "6.0.0",
+    "eslint-import-resolver-typescript": "2.5.0",
+    "eslint-plugin-flowtype": "8.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "25.2.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-webpack-plugin": "3.1.0",
+    "husky": "^7.0.0",
     "lint-staged": "^11.2.4",
     "postcss": "^7.0.39",
     "prettier": "^2.4.1",
+    "prettier-eslint": "13.0.0",
+    "prettier-eslint-cli": "5.0.1",
     "stylelint": "^14.0.0",
     "stylelint-config-standard": "^23.0.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-    "husky": "^7.0.0"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }
