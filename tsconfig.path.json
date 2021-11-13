@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": "src",
+      "paths": {
+        "@modal": ["lib/interface/index"],
+        "@common": ["lib/components/field-input/FieldInput"]
+      }
+    }
+  }

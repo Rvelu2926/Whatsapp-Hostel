@@ -53,7 +53,7 @@
         "allowForLoopAfterthoughts": true
       }
     ],
-    "no-console": "error",
+    "no-console": "off",
     "no-shadow": "off",
     "no-use-before-define": "off",
     "@typescript-eslint/semi": ["off"],
