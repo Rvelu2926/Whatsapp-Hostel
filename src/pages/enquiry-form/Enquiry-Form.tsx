@@ -1,33 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
-import '../styles/Enquiry-Form.scss'
+import './Enquiry-Form.scss'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import person from '../../../assest/person.jpg'
+import person from '../../assest/person.jpg'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-// import Stack from '@mui/material/Stack'
 import { SubmitHandler, FormProvider, useForm } from 'react-hook-form'
 import { SchemaOf, string, object } from 'yup'
-import CommonFieldInput from '../../../lib/components/field-input/FieldInput'
+import CommonFieldInput from '../../lib/components/FormInputText/FieldInput'
+import { IEnquiry } from './Enquiry-form.modal'
 
-interface IFormProps {
-  firstName: string
-  lastName: string
-  phoneNo: string
-  email: string
-  duration: string
-  referal: string
-  noOfPeople: string
-  roomChoice: string
-  location: string
-  building: string
-}
-
-const formSchema: SchemaOf<IFormProps> = object({
+const formSchema: SchemaOf<IEnquiry> = object({
   firstName: string().required('required'),
   lastName: string().required(),
   phoneNo: string().required(),
@@ -41,11 +28,11 @@ const formSchema: SchemaOf<IFormProps> = object({
 })
 
 export default function EnquiryForm(): JSX.Element {
-  const methods = useForm<IFormProps>({
+  const methods = useForm<IEnquiry>({
     resolver: yupResolver(formSchema),
   })
 
-  const submitRecipe: SubmitHandler<IFormProps> = async (data: IFormProps) => {
+  const submitEnquiryForm: SubmitHandler<IEnquiry> = async (data: IEnquiry) => {
     console.log('data submitted', data)
   }
 
@@ -61,7 +48,7 @@ export default function EnquiryForm(): JSX.Element {
                 </Typography>
                 <Box sx={{ flexGrow: 1 }}>
                   <FormProvider {...methods}>
-                    <form onSubmit={methods.handleSubmit(submitRecipe)}>
+                    <form onSubmit={methods.handleSubmit(submitEnquiryForm)}>
                       <Grid container spacing={2} columns={12}>
                         <Grid item>
                           <CommonFieldInput label="FirstName" name="firstName" />
