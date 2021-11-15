@@ -2,8 +2,6 @@ import React from 'react'
 import './App.scss'
 import { ThemeProvider } from '@mui/material/styles/'
 import { theme } from './theme/materialUI'
-// import FieldArrayForm from './pages/test'
-import EnquiryForm from './pages/enquiry-form/components/Enquiry-Form'
 import { Routes, Route } from 'react-router-dom'
 import { routesConfig } from './route-mapping'
 

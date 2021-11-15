@@ -14,6 +14,10 @@ export const routesConfig: IRoute[] = [
   },
   {
     path: 'enquiry',
-    components: React.lazy(() => import('./pages/enquiry-form/components/Enquiry-Form')),
+    components: React.lazy(() => import('./pages/enquiry-form/Enquiry-Form')),
+  },
+  {
+    path: 'complaint',
+    components: React.lazy(() => import('./pages/complaint-form/Complaint-form')),
   },
 ]
