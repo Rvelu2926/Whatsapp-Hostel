@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import React, { memo } from 'react'
 import TextField from '@mui/material/TextField'
-import { ITextFieldProps } from '@modal'
+import { ITextFieldProps } from '@common/component/modal'
 
 const FieldInputMemo = memo(
   ({ methods, label, name }: ITextFieldProps) => (

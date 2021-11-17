@@ -10,10 +10,11 @@ interface IFormProps {
   name: number
 }
 
-const FieldArrayForm: FC = () => {
+const Test: FC = () => {
   // const formSchema =  yup.object().shape({
   //   name: yup.string().required('Fullname is required')
   // })
+
   const formSchema = object({
     name: number().required('Name is required'),
   })
@@ -30,7 +31,7 @@ const FieldArrayForm: FC = () => {
     resolver: yupResolver(formSchema),
   })
 
-  const submitRecipe: SubmitHandler<IFormProps> = async (data: IFormProps) => {
+  const submitRecipe: SubmitHandler<IFormProps> = async (datfa: IFormProps) => {
     // console.log('data submitted', data);
   }
 
@@ -66,4 +67,4 @@ const FieldArrayForm: FC = () => {
   )
 }
 
-export default FieldArrayForm
+export default Test
