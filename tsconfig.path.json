@@ -2,7 +2,8 @@
     "compilerOptions": {
       "baseUrl": "src",
       "paths": {
-        "@modal": ["lib/interface/index"],
+        "@common/component/modal": ["lib/interface/commonComponent.modal"],
+        "@common/hooks/modal": ["lib/interface/customHook.modal"],
         "@common": ["lib/components/field-input/FieldInput"]
       }
     }
