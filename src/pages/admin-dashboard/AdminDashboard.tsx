@@ -4,7 +4,7 @@ import DashboardCard from './components/card'
 import DashboardList from './components/list'
 import TemporaryDrawer from './components/SideNav'
 
-export default function AdminDashboard() {
+export default function AdminDashboard(): JSX.Element {
   return (
     <div>
       <TemporaryDrawer></TemporaryDrawer>

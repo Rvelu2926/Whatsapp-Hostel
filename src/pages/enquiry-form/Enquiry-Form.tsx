@@ -11,8 +11,9 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import { SubmitHandler, FormProvider, useForm } from 'react-hook-form'
 import { SchemaOf, string, object } from 'yup'
-import CommonFieldInput from '../../lib/components/FormInputText/FieldInput'
+import FormInputText from '../../lib/components/FormInputText/formInputText'
 import { IEnquiry } from './Enquiry-form.modal'
+import FormInputSelect from '../../lib/components/FormInputSelect/formInputSelect'
 
 const formSchema: SchemaOf<IEnquiry> = object({
   firstName: string().required('required'),
@@ -31,6 +32,21 @@ export default function EnquiryForm(): JSX.Element {
   const methods = useForm<IEnquiry>({
     resolver: yupResolver(formSchema),
   })
+
+  const buildingList = [
+    {
+      name: 'newBuilding',
+      location: 'saravanan',
+    },
+    {
+      name: 'newBuilding',
+      location: 'saravanan1',
+    },
+    {
+      name: 'newBuilding',
+      location: 'saravanan2',
+    },
+  ]
 
   const submitEnquiryForm: SubmitHandler<IEnquiry> = async (data: IEnquiry) => {
     console.log('data submitted', data)
@@ -51,34 +67,41 @@ export default function EnquiryForm(): JSX.Element {
                     <form onSubmit={methods.handleSubmit(submitEnquiryForm)}>
                       <Grid container spacing={2} columns={12}>
                         <Grid item>
-                          <CommonFieldInput label="FirstName" name="firstName" />
+                          <FormInputText label="FirstName" name="firstName" />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="lastName" label="LastName" />
+                          <FormInputText name="lastName" label="LastName" />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="phoneNo" label="Phone Number" />
+                          <FormInputText name="phoneNo" label="Phone Number" />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="email" label="Email" />
+                          <FormInputText name="email" label="Email" />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="duration" label="Duration" />
+                          <FormInputText name="duration" label="Duration" />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="referal" label="Referal" />
+                          <FormInputText name="referal" label="Referal" />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="noOfPeople" label="No of People" />
+                          <FormInputText name="noOfPeople" label="No of People" />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="roomChoice" label="Room Choice" />
+                          <FormInputText name="roomChoice" label="Room Choice" />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="location" label="Location" />
+                          {/* <FormInputText name="location" label="Location" /> */}
+                          <FormInputSelect
+                            name="location"
+                            label="Location"
+                            optionList={buildingList}
+                            optionObject={true}
+                            optionParam="location"
+                          />
                         </Grid>
                         <Grid item>
-                          <CommonFieldInput name="building" label="Building" />
+                          <FormInputText name="building" label="Building" />
                         </Grid>
                         <Grid container alignContent="center" alignItems="center" spacing={2}>
                           <Button type="submit" variant="contained">

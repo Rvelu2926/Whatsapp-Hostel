@@ -12,7 +12,7 @@ import MailIcon from '@mui/icons-material/Mail'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(): JSX.Element {
   const [state, setState] = React.useState({
     top: false,
     left: false,

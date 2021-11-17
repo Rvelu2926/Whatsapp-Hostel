@@ -10,14 +10,14 @@ export default function FormInputSelect({
   optionList,
   optionParam,
   optionObject,
-}: IReactHookFormInputSelectProps) {
+}: IReactHookFormInputSelectProps): JSX.Element {
   const {
     register,
     formState: { errors },
   } = useFormContext()
 
   return (
-    <div>
+    <>
       <TextField
         select
         label={label}
@@ -42,6 +42,6 @@ export default function FormInputSelect({
             </MenuItem>
           ))}
       </TextField>
-    </div>
+    </>
   )
 }

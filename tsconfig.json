@@ -26,6 +26,7 @@
   },
   "extends": "./tsconfig.path.json",
   "include": [
-    "src"
+    "src",
+    "**/*.config.js"
   ]
 }

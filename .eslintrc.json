@@ -80,12 +80,20 @@
           "**/*.test.jsx",
           "**/*.test.ts",
           "**/*.test.tsx",
-          "src/tests/**/*"
+          "src/tests/**/*",
+          "src/carco.config.js"
         ]
       }
     ],
     "import/prefer-default-export": "off",
-    "import/extensions": ["error", "ignorePackages", { "ts": "never", "tsx": "never" }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "eslint object-curly-newline": ["off"],
     "react/jsx-boolean-value": "off",
     "react/prop-types": "off",
@@ -93,23 +101,35 @@
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": "off",
     "react/destructuring-assignment": "off",
-    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".tsx"]
+      }
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-key": "error",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": ["off"],
     "react/jsx-uses-react": "off",
-    "react/boolean-prop-naming": ["warn", { "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+" }]
+    "react/boolean-prop-naming": [
+      "warn",
+      {
+        "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": false
-      }
+      },
+      "node": {}
     },
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "ignorePatterns": ["src/carco.config.js"]
 }
