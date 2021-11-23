@@ -2,7 +2,6 @@ import DashboardIcon from '@mui/icons-material/Dashboard'
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import FeedbackIcon from '@mui/icons-material/Feedback'
 import RequestPageIcon from '@mui/icons-material/RequestPage'
-import AnnouncementIcon from '@mui/icons-material/Announcement'
 import FolderOpenIcon from '@mui/icons-material/FolderOpen'
 
 export const sideData = [

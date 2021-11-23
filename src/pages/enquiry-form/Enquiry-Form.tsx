@@ -12,7 +12,7 @@ import Button from '@mui/material/Button'
 import { SubmitHandler, FormProvider, useForm } from 'react-hook-form'
 import { SchemaOf, string, object } from 'yup'
 import FormInputText from '../../lib/components/FormInputText/formInputText'
-import { IEnquiry, IPostEnquiry } from './Enquiry-form.modal'
+import { IEnquiry } from './Enquiry-form.modal'
 import FormInputSelect from '../../lib/components/FormInputSelect/formInputSelect'
 
 const formSchema: SchemaOf<IEnquiry> = object({

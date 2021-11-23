@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react'
 import './App.scss'
 import { ThemeProvider } from '@mui/material/styles/'
