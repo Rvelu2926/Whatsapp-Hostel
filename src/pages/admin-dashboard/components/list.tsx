@@ -1,6 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material'
 import React from 'react'
-export default function DashboardList() {
+
+export default function DashboardList(): JSX.Element {
   return (
     <div className="m-4">
       <Accordion>

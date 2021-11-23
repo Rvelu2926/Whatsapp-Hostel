@@ -10,3 +10,15 @@ export interface ITextFieldProps {
   label: string
   name: string
 }
+
+export interface IReactHookFormInputTextProps {
+  label: string
+  name: string
+}
+export interface IReactHookFormInputSelectProps {
+  label: string
+  name: string
+  optionList: Array<any>
+  optionParam: string
+  optionObject?: boolean
+}

@@ -15,7 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
   boxShadow: theme.shadows[2],
 }))
 
-export default function DashboardCard() {
+export default function DashboardCard(): JSX.Element {
   const cardDetails = [
     {
       name: 'Enquiry/Booking Form',

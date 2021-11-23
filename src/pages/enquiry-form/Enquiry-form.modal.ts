@@ -10,3 +10,17 @@ export interface IEnquiry {
   location: string
   building: string
 }
+
+export interface IPostEnquiry {
+  address: string
+  buildings: number
+  description: string
+  email: string
+  enquiryStatus: string
+  id: number
+  locations: number
+  name: string
+  numberOfPeople: number
+  phoneNumber: string
+  zipCode: string
+}

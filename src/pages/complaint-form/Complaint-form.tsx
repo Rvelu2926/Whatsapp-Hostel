@@ -3,7 +3,7 @@ import { useForm, FormProvider, SubmitHandler } from 'react-hook-form'
 import { object, SchemaOf, string } from 'yup'
 import { IComplaintForm } from './complaint-form.modal'
 import { Button, Grid } from '@mui/material'
-import FormInputText from '../../lib/components/FormInputText/FormInputText'
+import FormInputText from '../../lib/components/FormInputText/formInputText'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 const complaintFormSchema: SchemaOf<IComplaintForm> = object({
