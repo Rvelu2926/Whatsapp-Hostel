@@ -11,6 +11,7 @@ export default function AdminDashboard() {
       <DashboardTopBar></DashboardTopBar>
       <DashboardCard></DashboardCard>
       <DashboardList></DashboardList>
+      <DashboardList></DashboardList>
     </div>
   )
 }
