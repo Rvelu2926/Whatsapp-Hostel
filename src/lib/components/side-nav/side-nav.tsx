@@ -1,29 +1,14 @@
-import React, { useState, useCallback } from 'react'
-import { IoLogoEdge, IoBookmark } from 'react-icons/io5'
-import { BsImageFill, BsFillHandbagFill, BsFillStarFill, BsHouseFill } from 'react-icons/bs'
+import React, { useState } from 'react'
+import { IoLogoEdge } from 'react-icons/io5'
 import { RiSettings4Fill } from 'react-icons/ri'
 import { FaRegBell } from 'react-icons/fa'
 import classNames from 'classnames'
 
 import '../../../index.scss'
+import { Link } from 'react-router-dom'
 
 const Sidebar = ({ navigationData }: any) => {
   const [currentRoute, setCurrentRoute] = useState('Home')
-
-  const renderIcon = useCallback((element) => {
-    switch (element) {
-      case 'Home':
-        return <BsHouseFill />
-      case 'Gallery':
-        return <BsImageFill />
-      case 'Store':
-        return <BsFillHandbagFill />
-      case 'Favorites':
-        return <BsFillStarFill />
-      case 'Saved':
-        return <IoBookmark />
-    }
-  }, [])
 
   return (
     <nav className="fixed left-0 top-0 bottom-0 z-50 w-14 bg-white flex flex-col h-screen justify-between items-center py-6 rounded-tr-4xl ">
@@ -36,20 +21,22 @@ const Sidebar = ({ navigationData }: any) => {
             key={index}
             className={classNames([
               'text-gray-400 hover:text-gray-800 text-xl py-4 cursor-pointer',
-              currentRoute === element && 'text-blue-600 hover:text-blue-700',
+              currentRoute === element.title && 'text-blue-600 hover:text-blue-700',
               'group',
             ])}
-            onClick={() => setCurrentRoute(element)}
+            onClick={() => setCurrentRoute(element.title)}
           >
-            {renderIcon(element)}
-            <span
-              className={classNames([
-                'absolute w-auto min-w-max left-16 text-base font-medium hidden',
-                'group-hover:inline',
-              ])}
-            >
-              {element}
-            </span>
+            <Link to={element.path}>
+              {element.icon}
+              <span
+                className={classNames([
+                  'absolute w-auto min-w-max left-16 text-base font-medium hidden',
+                  'group-hover:inline',
+                ])}
+              >
+                {element.title}
+              </span>
+            </Link>
           </li>
         ))}
       </ul>

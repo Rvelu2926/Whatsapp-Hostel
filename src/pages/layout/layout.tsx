@@ -5,9 +5,11 @@ import { sideData } from '../../lib/constant/sidenav.constant'
 
 export default function Layout() {
   return (
-    <div className="bg-gray-200">
-      <SideNav navigationData={sideData} />
-      <div className="flex items-center justify-center text-5xl text-gray-300 h-screen">
+    <div className="bg-gray-200 flex ">
+      <div className="flex w-14">
+        <SideNav navigationData={sideData} />
+      </div>
+      <div className="flex flex-1">
         <Outlet />
       </div>
     </div>
