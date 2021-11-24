@@ -1,3 +1,4 @@
+import { HTMLInputTypeAttribute } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 
 export interface ITextFieldContainerProps {
@@ -14,6 +15,7 @@ export interface ITextFieldProps {
 export interface IReactHookFormInputTextProps {
   label: string
   name: string
+  inputType?: HTMLInputTypeAttribute
 }
 export interface IReactHookFormInputSelectProps {
   label: string

@@ -6,6 +6,7 @@ import { IReactHookFormInputTextProps } from '@common/component/modal'
 const FormInputText: FC<IReactHookFormInputTextProps> = ({
   label,
   name,
+  inputType = 'text',
 }: IReactHookFormInputTextProps) => {
   const {
     register,
@@ -20,6 +21,7 @@ const FormInputText: FC<IReactHookFormInputTextProps> = ({
       helperText={errors[name]?.message ?? ''}
       fullWidth
       margin="dense"
+      type={inputType}
       {...register(name)}
     />
   )

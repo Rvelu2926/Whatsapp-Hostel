@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const AdminDashboard = () => {
+const AdminDashboard = (): JSX.Element => {
   return <div>Welcome to admin screen</div>
 }
 

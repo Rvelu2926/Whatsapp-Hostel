@@ -3,11 +3,12 @@ import { IoLogoEdge } from 'react-icons/io5'
 import { RiSettings4Fill } from 'react-icons/ri'
 import { FaRegBell } from 'react-icons/fa'
 import classNames from 'classnames'
+import { ISideNavProps } from '@sidenav/modal'
 
 import '../../../index.scss'
 import { Link } from 'react-router-dom'
 
-const Sidebar = ({ navigationData }: any) => {
+const Sidebar = ({ navigationData }: ISideNavProps): JSX.Element => {
   const [currentRoute, setCurrentRoute] = useState('Home')
 
   return (

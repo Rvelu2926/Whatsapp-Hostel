@@ -3,7 +3,7 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { sideData } from '../../lib/constant/sidenav.constant'
 
-export default function Layout() {
+export default function Layout(): JSX.Element {
   return (
     <div className="bg-gray-200 flex ">
       <div className="flex w-14">
