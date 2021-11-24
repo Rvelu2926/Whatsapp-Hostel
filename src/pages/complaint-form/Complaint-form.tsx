@@ -3,7 +3,7 @@ import { useForm, FormProvider, SubmitHandler } from 'react-hook-form'
 import { object, SchemaOf, string } from 'yup'
 import { IComplaintForm } from './complaint-form.modal'
 import { Button, Grid } from '@mui/material'
-import FormInputText from '../../lib/components/FormInputText/formInputText'
+import FormInputText from '../../lib/components/FormInputText/FormInputText'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 const complaintFormSchema: SchemaOf<IComplaintForm> = object({
@@ -13,7 +13,7 @@ const complaintFormSchema: SchemaOf<IComplaintForm> = object({
   feedback: string().required('required'),
 })
 
-export default function ComplaintForm() {
+export default function ComplaintForm(): JSX.Element {
   const methods = useForm<IComplaintForm>({
     resolver: yupResolver(complaintFormSchema),
   })

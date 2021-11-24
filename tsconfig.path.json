@@ -2,9 +2,10 @@
     "compilerOptions": {
       "baseUrl": "src",
       "paths": {
-        "@common/component/modal": ["lib/interface/commonComponent.modal"],
+        "@common/component/modal": ["lib/interface/CommonComponent.modal"],
         "@common/hooks/modal": ["lib/interface/customHook.modal"],
-        "@common": ["lib/components/field-input/FieldInput"]
+        "@sidenav/modal":["lib/interface/sidenav.modal"],
+        "@login/modal":["lib/interface/login.modal.ts"]
       }
     }
   }
