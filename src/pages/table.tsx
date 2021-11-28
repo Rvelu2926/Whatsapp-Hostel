@@ -16,7 +16,7 @@ interface ICommonTableProps {
   'aria-label'?: string
 }
 
-export default function BasicTable({ header, content, ...props }: ICommonTableProps) {
+export default function BasicTable({ header, content, ...props }: ICommonTableProps): JSX.Element {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
