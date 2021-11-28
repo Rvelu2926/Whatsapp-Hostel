@@ -1,14 +1,16 @@
 export interface IEnquiry {
-  firstName: string
-  lastName: string
-  phoneNo: string
-  email: string
   duration: string
   referal: string
-  noOfPeople: string
   roomChoice: string
-  location: string
-  building: string
+  address: string
+  buildings: any
+  description: string
+  email: string
+  locations: any
+  name: string
+  numberOfPeople: string
+  phoneNumber: string
+  zipCode: string
 }
 
 export interface IPostEnquiry {

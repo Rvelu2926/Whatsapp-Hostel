@@ -7,6 +7,10 @@ const FormInputText: FC<IReactHookFormInputTextProps> = ({
   label,
   name,
   inputType = 'text',
+  inputFullWidth = true,
+  inputMultiline = false,
+  inputRows = 0,
+  inputRowsMax = 0,
 }: IReactHookFormInputTextProps) => {
   const {
     register,
@@ -19,7 +23,10 @@ const FormInputText: FC<IReactHookFormInputTextProps> = ({
       variant="outlined"
       error={!!errors[name]}
       helperText={errors[name]?.message ?? ''}
-      fullWidth
+      fullWidth={inputFullWidth}
+      rows={inputRows}
+      maxRows={inputRowsMax}
+      multiline={inputMultiline}
       margin="dense"
       type={inputType}
       {...register(name)}

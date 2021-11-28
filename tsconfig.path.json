@@ -5,7 +5,9 @@
         "@common/component/modal": ["lib/interface/CommonComponent.modal"],
         "@common/hooks/modal": ["lib/interface/customHook.modal"],
         "@sidenav/modal":["lib/interface/sidenav.modal"],
-        "@login/modal":["lib/interface/login.modal.ts"]
+        "@login/modal":["lib/interface/login.modal.ts"],
+        "@complaint/modal":["lib/interface/complaint-form.modal.ts"],
+        "@enquiry/modal":["lib/interface/Enquiry-form.modal.ts"]
       }
     }
   }

@@ -16,6 +16,10 @@ export interface IReactHookFormInputTextProps {
   label: string
   name: string
   inputType?: HTMLInputTypeAttribute
+  inputFullWidth?: boolean
+  inputMultiline?: boolean
+  inputRows?: number
+  inputRowsMax?: number
 }
 export interface IReactHookFormInputSelectProps {
   label: string
