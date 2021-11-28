@@ -1,66 +1,52 @@
 import React, { FC } from 'react'
 import BasicTable from './table'
 const Test: FC = () => {
-  const headerData = ['Dessert (100g serving)', 'Calories', 'Fat', 'Carbs', 'Protein', 'meta']
-  const contentData = [
-    {
-      'Dessert (100g serving)': 'Frozen yoghurt',
-      Calories: 159,
-      Fat: 6.0,
-      Carbs: 24,
-      Protein: 4.0,
-      meta: 1,
-    },
-    {
-      'Dessert (100g serving)': 'Frozen yoghurt',
-      Calories: 159,
-      Fat: 6.0,
-      Carbs: 24,
-      Protein: 4.0,
-      meta: 1,
-    },
-    {
-      'Dessert (100g serving)': 'Frozen yoghurt',
-      Calories: 159,
-      Fat: 6.0,
-      Carbs: 24,
-      Protein: 4.0,
-      meta: 1,
-    },
-  ]
-
-  const headerData2 = ['name', 'data', 'time']
+  const headerData2 = ['name', 'phone', 'email', 'location', 'building', 'sharing']
   const contentData2 = [
     {
-      name: 'vetri',
-      data: '1str person',
-      time: 'today',
+      name: 'vetriselvan',
+      phone: 973738739379,
+      email: 'mail@mainModule.com',
+      location: 'saravanapatti',
+      building: 'wu hostel',
+      sharing: 2,
     },
     {
-      name: 'karthi',
-      data: '2str person',
-      time: 'today',
+      name: 'vetriselvan',
+      phone: 973738739379,
+      email: 'mail@mainModule.com',
+      location: 'saravanapatti',
+      building: 'wu hostel',
+      sharing: 2,
     },
     {
-      name: 'kavi',
-      data: '3str person',
-      time: 'today',
+      name: 'vetriselvan',
+      phone: 973738739379,
+      email: 'mail@mainModule.com',
+      location: 'saravanapatti',
+      building: 'wu hostel',
+      sharing: 2,
     },
     {
-      name: 'karthick',
-      data: '4str person',
-      time: 'today',
+      name: 'vetriselvan',
+      phone: 973738739379,
+      email: 'mail@mainModule.com',
+      location: 'saravanapatti',
+      building: 'wu hostel',
+      sharing: 2,
     },
     {
-      name: 'vel',
-      data: '5str person',
-      time: 'today',
+      name: 'vetriselvan',
+      phone: 973738739379,
+      email: 'mail@mainModule.com',
+      location: 'saravanapatti',
+      building: 'wu hostel',
+      sharing: 2,
     },
   ]
 
   return (
-    <div>
-      <BasicTable header={headerData} content={contentData} />
+    <div className="flex align-center justify-center">
       <BasicTable header={headerData2} content={contentData2} />
     </div>
   )

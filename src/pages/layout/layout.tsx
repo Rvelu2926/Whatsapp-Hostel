@@ -5,7 +5,7 @@ import { sideData } from '../../lib/constant/sidenav.constant'
 
 export default function Layout(): JSX.Element {
   return (
-    <div className="bg-gray-200 flex ">
+    <div className="flex ">
       <div className="flex w-14">
         <SideNav navigationData={sideData} />
       </div>

@@ -9,4 +9,13 @@ export const theme = createTheme({
       contrastText: '#fff',
     },
   },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: ' #FFFFFF',
+        },
+      },
+    },
+  },
 })

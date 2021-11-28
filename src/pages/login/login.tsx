@@ -1,11 +1,8 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
-import Avatar from '@mui/material/Avatar'
-import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import './login.scss'
 import { Link } from 'react-router-dom'
 import FormInputText from '../../lib/components/FormInputText/FormInputText'
@@ -20,7 +17,6 @@ const loginFormSchema: SchemaOf<ILoginForm> = object({
 })
 
 function Login(): JSX.Element {
-  const paperStyle = { padding: 20, height: 'auto', maxWidth: 510, margin: '20px auto' }
   const methods = useForm<ILoginForm>({
     resolver: yupResolver(loginFormSchema),
   })
@@ -30,65 +26,59 @@ function Login(): JSX.Element {
   }
 
   return (
-    <>
-      <div className="text-center m-0  w-screen h-screen main-style overflow-hidden flex items-center justify-center">
-        <Grid>
-          <Paper elevation={10} style={paperStyle}>
-            <Box
-              sx={{
-                marginTop: 4,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Avatar sx={{ m: 2, bgcolor: 'secondary.main' }}>
-                <LockOutlinedIcon />
-              </Avatar>
-            </Box>
-            <Grid>
-              <Typography variant="h2" className="login-title text-center font-extrabold">
-                {' '}
-                Admin Sign in
-              </Typography>
-            </Grid>
-            <Box sx={{ mt: '1rem' }}>
-              <Typography variant="h6" className="login-description text-center">
-                Sign in and start managing your Hostellers!
-              </Typography>
-            </Box>
+    <div className="wrapper-login p-5 flex justify-center">
+      <div className="form-container p-7">
+        <div className="p-3 flex-1 flex-row justify-center align-center">
+          <Typography className="text-center" variant="h3" color="initial">
+            Login
+          </Typography>
+          <Box sx={{ mt: '1rem' }}>
+            <Typography variant="h6" className="text-center">
+              Sign in and start managing your Hostellers!
+            </Typography>
+          </Box>
+          <Box sx={{ flexGrow: 1 }}>
             <FormProvider {...methods}>
               <form onSubmit={methods.handleSubmit(submitLoginForm)}>
-                <Box sx={{ m: '2rem' }}>
-                  <FormInputText label="Username" name="userName" />
-                  <FormInputText label="Password" inputType="password" name="password" />
-                </Box>
-                <div className="block">
-                  <Grid container>
-                    <Grid item xs={6}>
-                      <label className="inline-flex items-center">
-                        <input type="checkbox" className="form-checkbox" defaultChecked />
-                        <span className="ml-2">Remember Me</span>
-                      </label>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <label className="inline-flex items-right">
-                        <Link to="/">Forget Password?</Link>
-                      </label>
-                    </Grid>
+                <Grid container spacing={{ xs: 2, md: 2 }} columns={12}>
+                  <Grid item xs={12} md={12} sm={12}>
+                    <FormInputText label="Username" name="userName" />
                   </Grid>
-                </div>
-                <Box sx={{ m: '1.5rem' }}>
-                  <Button variant="contained" type="submit" fullWidth>
-                    Login
-                  </Button>
+                  <Grid item xs={12} md={12} sm={12}>
+                    <FormInputText label="Password" inputType="password" name="password" />
+                  </Grid>
+                </Grid>
+                <Grid marginTop={3} container columns={12}>
+                  <Grid item xs={6} md={6} sm={6}>
+                    <label className="inline-flex items-center">
+                      <input type="checkbox" className="form-checkbox" defaultChecked />
+                      <span className="ml-2">Remember Me</span>
+                    </label>
+                  </Grid>
+                  <Grid item xs={6} md={6} sm={6}>
+                    <label className="inline-flex items-right">
+                      <Link to="/">Forget Password?</Link>
+                    </label>
+                  </Grid>
+                </Grid>
+                <Box justifyContent="center" marginTop={3} display="flex" alignContent="center">
+                  <div>
+                    <Button type="reset" variant="outlined">
+                      Cancel
+                    </Button>
+                  </div>
+                  <div className="ml-5">
+                    <Button type="submit" variant="contained">
+                      Login
+                    </Button>
+                  </div>
                 </Box>
               </form>
             </FormProvider>
-          </Paper>
-        </Grid>
+          </Box>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 export default Login

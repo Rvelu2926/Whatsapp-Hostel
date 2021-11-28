@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(2),
-  margin: theme.spacing(2),
+  marginBottom: theme.spacing(2),
   textAlign: 'center',
   color: theme.palette.text.primary,
   borderColor: theme.palette.primary.dark,
@@ -36,9 +36,17 @@ export default function DashboardCard(): JSX.Element {
   ]
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+      <Grid
+        container
+        wrap="nowrap"
+        direction="row"
+        justifyContent="space-around"
+        alignItems="center"
+        spacing={{ xs: 2, md: 2 }}
+        columns={{ xs: 12, sm: 12, md: 12 }}
+      >
         {cardDetails.map((item, index) => (
-          <Grid item xs={2} sm={3} md={3} key={index}>
+          <Grid item xs={6} sm={4} md={3} key={index}>
             <Item>
               <Typography variant="h6" margin={2}>
                 {item.name}
