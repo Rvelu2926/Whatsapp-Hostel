@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles/'
 import { theme } from './theme/materialUI'
 import { routesConfig } from './route-mapping'
 import Home from './pages/home/home'
-import Login from './pages/login/login'
+import Login from './pages/login/Login'
 import Layout from './pages/layout/layout'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 
