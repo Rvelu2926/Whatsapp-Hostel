@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
-      "baseUrl": "src",
+      "baseUrl": "./src",
       "paths": {
-        "@common/component/modal": ["lib/interface/CommonComponent.modal"],
-        "@common/hooks/modal": ["lib/interface/customHook.modal"],
-        "@sidenav/modal":["lib/interface/sidenav.modal"],
-        "@login/modal":["lib/interface/login.modal.ts"],
-        "@complaint/modal":["lib/interface/complaint-form.modal.ts"],
-        "@enquiry/modal":["lib/interface/Enquiry-form.modal.ts"]
+        "@modal/*" : ["lib/interface/*"],
+        "@utils/*" : ["lib/utils/*"],
+        "@components/*" : ["lib/components/*"],
+        "@constant/*" : ["lib/constant/*"],
+        "@hooks/*" : ["lib/hooks/*"],
+        "@pages/*" : ["pages/*"]
       }
     }
   }

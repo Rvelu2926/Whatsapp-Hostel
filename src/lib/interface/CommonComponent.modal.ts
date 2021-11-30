@@ -28,3 +28,9 @@ export interface IReactHookFormInputSelectProps {
   optionParam: string
   optionObject?: boolean
 }
+
+export interface IFileInputProps {
+  label: string
+  name: string
+  id: string
+}

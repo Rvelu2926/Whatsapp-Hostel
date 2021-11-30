@@ -1,0 +1,8 @@
+@import '../../../theme/variable';
+
+.wrapper-file-container {
+  border: 1px solid $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,4 +1,4 @@
-import { IReactHookFormInputSelectProps } from '@common/component/modal'
+import { IReactHookFormInputSelectProps } from '@modal/CommonComponent.modal'
 import { MenuItem } from '@mui/material'
 import TextField from '@mui/material/TextField'
 import React from 'react'

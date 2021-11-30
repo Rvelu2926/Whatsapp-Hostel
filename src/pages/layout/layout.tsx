@@ -1,7 +1,7 @@
-import SideNav from '../../lib/components/side-nav/side-nav'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { sideData } from '../../lib/constant/sidenav.constant'
+import SideNav from '@components/side-nav/side-nav'
+import { sideData } from '@constant/sidenav.constant'
 
 export default function Layout(): JSX.Element {
   return (

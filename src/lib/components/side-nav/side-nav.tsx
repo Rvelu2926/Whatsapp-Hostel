@@ -3,7 +3,7 @@ import { IoLogoEdge } from 'react-icons/io5'
 import { RiSettings4Fill } from 'react-icons/ri'
 import { FaRegBell } from 'react-icons/fa'
 import classNames from 'classnames'
-import { ISideNavProps } from '@sidenav/modal'
+import { ISideNavProps } from '@modal/sidenav.modal'
 import { useLocation } from 'react-router-dom'
 
 import '../../../index.scss'

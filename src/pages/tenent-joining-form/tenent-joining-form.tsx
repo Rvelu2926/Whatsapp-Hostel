@@ -10,8 +10,8 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import { SubmitHandler, FormProvider, useForm } from 'react-hook-form'
 import { SchemaOf, string, object } from 'yup'
-import FormInputText from '../../lib/components/FormInputText/FormInputText'
-import { ITenentJoinningForm } from './tenent-joining.modal'
+import FormInputText from '@components/FormInputText/FormInputText'
+import { ITenentJoinningForm } from '@modal/tenent-joining.modal'
 
 const formSchema: SchemaOf<ITenentJoinningForm> = object({
   firstName: string().required('required'),
