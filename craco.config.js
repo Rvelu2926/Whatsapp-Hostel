@@ -1,5 +1,18 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
+const tsconfig = require('./tsconfig.path.json')
+
+const removeAsterisk = path => path.replace('/*', '')
+
+const aliasProps = Object.entries(tsconfig.compilerOptions.paths).map(([key, value]) => {
+  const newKey = removeAsterisk(key)
+  let newValue = removeAsterisk(value[0])
+  newValue = path.resolve(__dirname, newValue)
+  return [newKey, newValue]
+})
+
+const alias = Object.fromEntries(aliasProps)
+
 module.exports = {
     style: {
       postcss: {
@@ -10,13 +23,6 @@ module.exports = {
       },
     },
     webpack: {
-      alias: {
-        "@modal": path.resolve(__dirname, 'src/lib/interface/'),
-        "@utils": path.resolve(__dirname,'src/lib/utils/'),
-        "@components": path.resolve(__dirname,'src/lib/components/'),
-        "@constant": path.resolve(__dirname,'src/lib/constant/'),
-        "@hooks": path.resolve(__dirname,'src/lib/hooks/'),
-        "@pages": path.resolve(__dirname,'src/pages/')
-      }
+      alias
     }
   }

@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
-      "baseUrl": "./src",
+      "baseUrl": ".",
       "paths": {
-        "@modal/*" : ["lib/interface/*"],
-        "@utils/*" : ["lib/utils/*"],
-        "@components/*" : ["lib/components/*"],
-        "@constant/*" : ["lib/constant/*"],
-        "@hooks/*" : ["lib/hooks/*"],
-        "@pages/*" : ["pages/*"]
+        "@modal/*" : ["src/lib/interface/*"],
+        "@utils/*" : ["src/lib/utils/*"],
+        "@components/*" : ["src/lib/components/*"],
+        "@constant/*" : ["src/lib/constant/*"],
+        "@hooks/*" : ["src/lib/hooks/*"],
+        "@pages/*" : ["src/pages/*"]
       }
     }
   }
