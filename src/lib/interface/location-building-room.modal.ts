@@ -1,5 +1,24 @@
 export interface ILocation {
   buildings: IBuilding[]
+  locationName: string
+}
+
+export interface IBuilding {
+  buildingAddress?: string
+  buildingName?: string
+  rooms?: IRoom[]
+  zipCode?: string
+}
+
+export interface IRoom {
+  roomCapacity?: number
+  roomFloor?: number
+  roomName?: string
+  roomType?: string
+}
+
+export interface ILocationApi {
+  buildings: IBuilding[]
   createAt: string
   createdBy: string
   deleted: boolean
@@ -10,7 +29,7 @@ export interface ILocation {
   updatedBy: string
 }
 
-export interface IBuilding {
+export interface IBuildingApi {
   buildingAddress: string
   buildingName: string
   createAt: string
@@ -26,17 +45,16 @@ export interface IBuilding {
   zipCode: string
 }
 
-export interface IRoom {
-  buildings: any
-  createAt?: string
-  createdBy?: string
-  deleted?: boolean
-  id?: number
-  publish?: boolean
+export interface IRoomApi {
+  createAt: string
+  createdBy: string
+  deleted: boolean
+  id: number
+  publish: boolean
   roomCapacity: number
   roomFloor: number
   roomName: string
   roomType: string
-  updateAt?: string
-  updatedBy?: string
+  updateAt: string
+  updatedBy: string
 }
