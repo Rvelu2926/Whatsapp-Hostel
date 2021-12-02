@@ -8,9 +8,9 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import { SubmitHandler, FormProvider, useForm } from 'react-hook-form'
 import { SchemaOf, string, object } from 'yup'
-import FormInputText from '../../lib/components/FormInputText/FormInputText'
-import { IEnquiry } from '@enquiry/modal'
-import FormInputSelect from '../../lib/components/FormInputSelect/formInputSelect'
+import FormInputText from '@components/FormInputText/FormInputText'
+import { IEnquiry } from '@modal/Enquiry-form.modal'
+import FormInputSelect from '@components/FormInputSelect/formInputSelect'
 
 const formSchema: SchemaOf<IEnquiry> = object({
   name: string().required('Required'),

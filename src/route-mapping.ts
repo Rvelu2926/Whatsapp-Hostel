@@ -24,4 +24,16 @@ export const routesConfig: IRoute[] = [
     path: 'test',
     components: React.lazy(() => import('./pages/test')),
   },
+  {
+    path: 'user-creation',
+    components: React.lazy(() => import('@pages/user-creation-form/user-creation-form')),
+  },
+  {
+    path: 'room-creation',
+    components: React.lazy(() => import('@pages/room-creation/room-creation')),
+  },
+  {
+    path: 'location-creation',
+    components: React.lazy(() => import('@pages/location-form/location-form')),
+  },
 ]

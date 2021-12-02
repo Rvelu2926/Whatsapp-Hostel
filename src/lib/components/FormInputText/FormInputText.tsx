@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import TextField from '@mui/material/TextField'
 import { useFormContext } from 'react-hook-form'
-import { IReactHookFormInputTextProps } from '@common/component/modal'
+import { IReactHookFormInputTextProps } from '@modal/CommonComponent.modal'
 
 const FormInputText: FC<IReactHookFormInputTextProps> = ({
   label,

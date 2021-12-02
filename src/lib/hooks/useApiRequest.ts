@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { IApiRequestHook } from '@common/hooks/modal'
+import { IApiRequestHook } from '@modal/customHook.modal'
 
 export const usePostApi = (apiData: IApiRequestHook) => {
   const [responseData, setData] = useState<any>(null)

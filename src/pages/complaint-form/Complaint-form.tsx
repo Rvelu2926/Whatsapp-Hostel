@@ -1,25 +1,48 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm, FormProvider, SubmitHandler } from 'react-hook-form'
-import { object, SchemaOf, string } from 'yup'
-import { IComplaintForm } from '@complaint/modal'
+import { mixed, object, SchemaOf, string } from 'yup'
+import { IComplaintForm } from '@modal/complaint-form.modal'
 import { Button, Grid, Typography } from '@mui/material'
-import FormInputText from '../../lib/components/FormInputText/FormInputText'
+import FormInputText from '@components/FormInputText/FormInputText'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Box from '@mui/material/Box'
 import './complaint-form.scss'
+import CommonFilesInput from '@components/FormInputFiles/common-files-input'
+import { toBase64 } from '@utils/filereader'
 
 const complaintFormSchema: SchemaOf<IComplaintForm> = object({
   complaintDescription: string().required('required'),
   complaintsType: string().required('required'),
   contactNumber: string().required('required'),
+  compaintFiles: mixed().nullable(),
 })
 
 export default function ComplaintForm(): JSX.Element {
   const methods = useForm<IComplaintForm>({
     resolver: yupResolver(complaintFormSchema),
   })
+
+  const { watch } = methods
+
+  const fileInputWatch = watch('compaintFiles')
+  let fileName = []
+  useEffect(() => {
+    if (fileInputWatch) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      fileName = []
+      for (let i = 0; i < fileInputWatch.length; i++) {
+        const file: File = fileInputWatch[i]
+        fileName.push(file.name)
+      }
+      console.log(fileName)
+    }
+    return () => {}
+  }, [fileInputWatch])
+
   const submitComplaintForm: SubmitHandler<IComplaintForm> = async (data: IComplaintForm) => {
     console.log('data submitted', data)
+    const file = data.compaintFiles[0]
+    console.log(await toBase64(file))
   }
 
   return (
@@ -50,6 +73,13 @@ export default function ComplaintForm(): JSX.Element {
                       inputMultiline={true}
                       inputRows={4}
                       name="complaintDescription"
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={12} sm={12}>
+                    <CommonFilesInput
+                      name="compaintFiles"
+                      id="compaint-files"
+                      label="compaintFiles"
                     />
                   </Grid>
                 </Grid>
