@@ -8,6 +8,7 @@ import Home from '@pages/home/home'
 import Login from '@pages/login/Login'
 import Layout from '@pages/layout/layout'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import Table from './pages/kavi/Table'
 
 export default function App(): JSX.Element {
   return (
@@ -15,6 +16,7 @@ export default function App(): JSX.Element {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Table" element={<Table />} />
           <Route path="/login" element={<Login />} />
           {routesConfig.map(({ path, components }, i) => {
             const NewComponents = components
