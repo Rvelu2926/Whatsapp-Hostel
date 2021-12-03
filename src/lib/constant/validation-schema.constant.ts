@@ -3,21 +3,17 @@ import { IUserCreationForm } from '@modal/user-creation.modal'
 import * as Yup from 'yup'
 
 export const userCreationSchema: Yup.SchemaOf<IUserCreationForm> = Yup.object({
-  id: Yup.number(),
-  address: Yup.string().required(),
-  email: Yup.string().required(),
-  name: Yup.string().required(),
-  password: Yup.string().required(),
-  phoneNumber: Yup.string().required(),
-  userType: Yup.string().required(),
-  zipCode: Yup.string().required(),
+  address: Yup.mixed().required(),
+  email: Yup.mixed().required(),
+  name: Yup.mixed().required(),
+  password: Yup.mixed().required(),
+  phoneNumber: Yup.mixed().required(),
+  userType: Yup.mixed().required(),
+  zipCode: Yup.mixed().required(),
   buildingsDTO: Yup.array(),
   roomsDTO: Yup.object({
     id: Yup.number(),
-    roomCapacity: Yup.number(),
-    roomFloor: Yup.number(),
-    roomName: Yup.string(),
-  }).optional(),
+  }),
 })
 
 export const roomCreationSchema: Yup.SchemaOf<IRoom> = Yup.object({
@@ -36,20 +32,20 @@ export const roomCreationSchema: Yup.SchemaOf<IRoom> = Yup.object({
 })
 
 export const locationCreationSchema: Yup.SchemaOf<ILocation> = Yup.object({
-  locationName: Yup.string().required(),
+  locationName: Yup.mixed().optional(),
   buildings: Yup.array().of(
     Yup.object({
-      buildingAddress: Yup.string().optional(),
-      buildingName: Yup.string().optional(),
+      buildingAddress: Yup.mixed().optional(),
+      buildingName: Yup.mixed().optional(),
       rooms: Yup.array().of(
         Yup.object({
-          roomCapacity: Yup.number().optional(),
-          roomFloor: Yup.number().optional(),
-          roomName: Yup.string().optional(),
-          roomType: Yup.string().optional(),
+          roomCapacity: Yup.mixed().optional(),
+          roomFloor: Yup.mixed().optional(),
+          roomName: Yup.mixed().optional(),
+          roomType: Yup.mixed().optional(),
         }),
       ),
-      zipCode: Yup.string().optional(),
+      zipCode: Yup.mixed().optional(),
     }),
   ),
 })

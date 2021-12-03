@@ -27,7 +27,10 @@ export default function FormInputSelect({
         fullWidth
         margin="dense"
         {...register(name)}
-        defaultValue=""
+        defaultValue={[]}
+        SelectProps={{
+          multiple: true,
+        }}
       >
         {optionObject &&
           optionList.map((option, index) => (

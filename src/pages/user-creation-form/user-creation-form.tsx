@@ -4,11 +4,14 @@ import Box from '@mui/material/Box'
 import './user-creation.scss'
 import { SubmitHandler, FormProvider, useForm } from 'react-hook-form'
 import FormInputText from '@components/FormInputText/FormInputText'
-import { IUserCreationForm } from '@modal/user-creation.modal'
+import { IUserCreationForm, IUserCreationFormApi } from '@modal/user-creation.modal'
 import { userCreationSchema } from '@constant/validation-schema.constant'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
+import { postapiHandler } from '@utils/apiHandler'
+import { userCreationResponse } from './user-creation-utils'
+import FormInputSelect from '@components/FormInputSelect/formInputSelect'
 
 export default function UserCreationForm(): JSX.Element {
   const methods = useForm<IUserCreationForm>({
@@ -17,7 +20,21 @@ export default function UserCreationForm(): JSX.Element {
 
   const submitEnquiryForm: SubmitHandler<IUserCreationForm> = async (data: IUserCreationForm) => {
     console.log('data submitted', data)
+    const userResponse: IUserCreationFormApi = userCreationResponse(data)
+    console.log(userResponse)
+    const apiData = {
+      apiUrl: 'http://138.197.146.75:9050/v1/api/location/create',
+      payload: userResponse,
+    }
+    const res = await postapiHandler(apiData)
+    console.log(res)
   }
+  const buildingOption = [
+    {
+      name: 'WU Hostel',
+      id: 1,
+    },
+  ]
 
   return (
     <div className="wrapper-user-creation p-5 flex justify-center">
@@ -36,42 +53,42 @@ export default function UserCreationForm(): JSX.Element {
               <form onSubmit={methods.handleSubmit(submitEnquiryForm)}>
                 <Grid container spacing={2} columns={12}>
                   <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="name" name="name" />
+                    <FormInputText label="Name" name="name" />
                   </Grid>
                   <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="password" name="password" />
+                    <FormInputText label="Password" name="password" />
                   </Grid>
                   <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="phoneNumber" name="phoneNumber" />
+                    <FormInputText label="Phone Number" name="phoneNumber" />
                   </Grid>
                   <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="email" name="email" />
+                    <FormInputText label="Email" name="email" />
                   </Grid>
                   <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="userType" name="userType" />
+                    <FormInputText label="User Type" name="userType" />
                   </Grid>
                   <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="zipCode" name="zipCode" />
+                    <FormInputText label="Zipcode" name="zipCode" />
                   </Grid>
                   <Grid item xs={12} md={12} sm={12}>
                     <FormInputText
-                      label="address"
+                      label="Address"
                       inputMultiline={true}
                       inputRows={3}
                       name="address"
                     />
                   </Grid>
                   <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="buildingsDTO" name="buildingsDTO" />
+                    <FormInputSelect
+                      label="Buildings"
+                      name="buildingsDTO"
+                      optionList={buildingOption}
+                      optionParam="name"
+                      optionObject={true}
+                    />
                   </Grid>
                   <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="roomName" name="roomsDTO.roomName" />
-                  </Grid>
-                  <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="roomFloor" name="roomsDTO.roomFloor" />
-                  </Grid>
-                  <Grid item xs={12} md={4} sm={4}>
-                    <FormInputText label="roomCapacity" name="roomsDTO.roomCapacity" />
+                    <FormInputText label="Room" name="roomsDTO.roomName" />
                   </Grid>
                 </Grid>
                 <Box justifyContent="center" marginTop={3} display="flex" alignContent="center">

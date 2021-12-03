@@ -5,13 +5,15 @@ import FormInputText from '@components/FormInputText/FormInputText'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Box from '@mui/material/Box'
 import { locationCreationSchema } from '@constant/validation-schema.constant'
-import { ILocation } from '@modal/location-building-room.modal'
+import { ILocation, ILocationApi } from '@modal/location-building-room.modal'
 import RoomController from './room-controller'
 import { buildingDefaultValue, locationDefaultValue } from '@constant/form-default-value'
 import DeleteIcon from '@mui/icons-material/Delete'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import IconButton from '@mui/material/Button'
 import './location-form.scss'
+import { locationResponseDto } from './location-utils'
+import { postapiHandler } from '@utils/apiHandler'
 
 export default function LocationForm(): JSX.Element {
   const methods = useForm<ILocation>({
@@ -24,8 +26,16 @@ export default function LocationForm(): JSX.Element {
     control,
   })
 
-  const submitComplaintForm: SubmitHandler<ILocation> = async (data: ILocation) => {
-    console.log('data submitted', data)
+  const submitComplaintForm: SubmitHandler<ILocation> = async (datas: ILocation) => {
+    console.log('data submitted', datas)
+    const locationResponse: ILocationApi = locationResponseDto(datas)
+    console.log(locationResponse)
+    const data = {
+      apiUrl: 'http://138.197.146.75:9050/v1/api/location/create',
+      payload: locationResponse,
+    }
+    const res = await postapiHandler(data)
+    console.log(res)
   }
 
   return (

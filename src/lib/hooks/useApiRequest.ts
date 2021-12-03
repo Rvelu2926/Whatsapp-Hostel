@@ -11,14 +11,21 @@ export const usePostApi = (apiData: IApiRequestHook) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resData: any = await axios({
-          method: 'POST',
-          url: apiData.apiUrl,
-          data: apiData.payload,
-        })
-        if (resData) {
-          setIsLoaded(true)
-          setData(resData)
+        const obj = apiData.payload
+        if (
+          obj &&
+          Object.keys(obj).length === 0 &&
+          Object.getPrototypeOf(obj) === Object.prototype
+        ) {
+          const resData: any = await axios({
+            method: 'POST',
+            url: apiData.apiUrl,
+            data: apiData.payload,
+          })
+          if (resData) {
+            setIsLoaded(true)
+            setData(resData)
+          }
         }
       } catch (e: any) {
         setError(e)
