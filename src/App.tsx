@@ -8,6 +8,7 @@ import Home from '@pages/home/home'
 import Login from '@pages/login/login'
 import Layout from '@pages/layout/layout'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import Tail from './velmurugan/tailwind/tail'
 
 export default function App(): JSX.Element {
   return (
@@ -16,6 +17,7 @@ export default function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/Tail" element={<Tail />} />
           {routesConfig.map(({ path, components }, i) => {
             const NewComponents = components
             return (
